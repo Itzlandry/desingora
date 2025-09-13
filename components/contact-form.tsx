@@ -1,17 +1,29 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
-import { MessageCircle, Send, CheckCircle } from "lucide-react"
-import contactData from "@/data/contact.json"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { MessageCircle, Send, CheckCircle } from "lucide-react";
+import * as vars from "@/lib/vars";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -23,8 +35,8 @@ export function ContactForm() {
     budget: "",
     message: "",
     acceptTerms: false,
-  })
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const services = [
     { value: "construction", label: "Construction de maisons" },
@@ -34,7 +46,7 @@ export function ContactForm() {
     { value: "rigoles", label: "Rigoles et drainage" },
     { value: "poteaux", label: "Poteaux électriques" },
     { value: "autre", label: "Autre service" },
-  ]
+  ];
 
   const budgetRanges = [
     { value: "moins-1m", label: "Moins de 1,000,000 FCFA" },
@@ -43,14 +55,14 @@ export function ContactForm() {
     { value: "10m-20m", label: "10,000,000 - 20,000,000 FCFA" },
     { value: "plus-20m", label: "Plus de 20,000,000 FCFA" },
     { value: "a-discuter", label: "À discuter" },
-  ]
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Simulate form submission
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
-  }
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 3000);
+  };
 
   const handleWhatsAppContact = () => {
     const message = encodeURIComponent(
@@ -58,36 +70,48 @@ export function ContactForm() {
 
 Détails:
 - Nom: ${formData.name}
-- Service: ${services.find((s) => s.value === formData.service)?.label || "Non spécifié"}
+- Service: ${
+        services.find((s) => s.value === formData.service)?.label ||
+        "Non spécifié"
+      }
 - Localisation: ${formData.location || "Non spécifiée"}
-- Budget: ${budgetRanges.find((b) => b.value === formData.budget)?.label || "Non spécifié"}
+- Budget: ${
+        budgetRanges.find((b) => b.value === formData.budget)?.label ||
+        "Non spécifié"
+      }
 - Message: ${formData.message || "Aucun message supplémentaire"}
 
-Merci de me recontacter pour discuter de ce projet.`,
-    )
-    const whatsappUrl = `https://wa.me/${contactData.whatsapp[0].replace("+", "")}?text=${message}`
-    window.open(whatsappUrl, "_blank")
-  }
+Merci de me recontacter pour discuter de ce projet.`
+    );
+    const whatsappUrl = `https://wa.me/${vars.phones[0].replace(
+      "+",
+      ""
+    )}?text=${message}`;
+    window.open(whatsappUrl, "_blank");
+  };
 
   const handleInputChange = (field: string, value: string | boolean) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   if (isSubmitted) {
     return (
       <Card className="bg-green-50 border-green-200 dark:bg-green-950 dark:border-green-800">
         <CardContent className="p-8 text-center">
           <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-green-800 dark:text-green-200 mb-2">Message Envoyé !</h3>
+          <h3 className="text-xl font-semibold text-green-800 dark:text-green-200 mb-2">
+            Message Envoyé !
+          </h3>
           <p className="text-green-700 dark:text-green-300 mb-4">
-            Merci pour votre demande. Nous vous recontacterons dans les plus brefs délais.
+            Merci pour votre demande. Nous vous recontacterons dans les plus
+            brefs délais.
           </p>
           <Button onClick={() => setIsSubmitted(false)} variant="outline">
             Envoyer un Autre Message
           </Button>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
@@ -95,7 +119,8 @@ Merci de me recontacter pour discuter de ce projet.`,
       <CardHeader>
         <CardTitle>Demande de Devis Gratuit</CardTitle>
         <CardDescription>
-          Remplissez ce formulaire et nous vous recontacterons rapidement pour discuter de votre projet
+          Remplissez ce formulaire et nous vous recontacterons rapidement pour
+          discuter de votre projet
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -140,7 +165,11 @@ Merci de me recontacter pour discuter de ce projet.`,
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="service">Service souhaité *</Label>
-              <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)} required>
+              <Select
+                value={formData.service}
+                onValueChange={(value) => handleInputChange("service", value)}
+                required
+              >
                 <SelectTrigger>
                   <SelectValue placeholder="Choisir un service" />
                 </SelectTrigger>
@@ -166,7 +195,10 @@ Merci de me recontacter pour discuter de ce projet.`,
 
           <div className="space-y-2">
             <Label htmlFor="budget">Budget estimé</Label>
-            <Select value={formData.budget} onValueChange={(value) => handleInputChange("budget", value)}>
+            <Select
+              value={formData.budget}
+              onValueChange={(value) => handleInputChange("budget", value)}
+            >
               <SelectTrigger>
                 <SelectValue placeholder="Sélectionner une fourchette" />
               </SelectTrigger>
@@ -197,7 +229,9 @@ Merci de me recontacter pour discuter de ce projet.`,
             <Checkbox
               id="terms"
               checked={formData.acceptTerms}
-              onCheckedChange={(checked) => handleInputChange("acceptTerms", checked as boolean)}
+              onCheckedChange={(checked) =>
+                handleInputChange("acceptTerms", checked as boolean)
+              }
               required
             />
             <Label htmlFor="terms" className="text-sm">
@@ -207,7 +241,12 @@ Merci de me recontacter pour discuter de ce projet.`,
 
           {/* Submit Buttons */}
           <div className="space-y-3">
-            <Button type="submit" className="w-full" size="lg" disabled={!formData.acceptTerms}>
+            <Button
+              type="submit"
+              className="w-full"
+              size="lg"
+              disabled={!formData.acceptTerms}
+            >
               <Send className="mr-2 h-4 w-4" />
               Envoyer la Demande
             </Button>
@@ -217,7 +256,9 @@ Merci de me recontacter pour discuter de ce projet.`,
                 <span className="w-full border-t" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">Ou</span>
+                <span className="bg-background px-2 text-muted-foreground">
+                  Ou
+                </span>
               </div>
             </div>
 
@@ -236,5 +277,5 @@ Merci de me recontacter pour discuter de ce projet.`,
         </form>
       </CardContent>
     </Card>
-  )
+  );
 }

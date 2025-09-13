@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import Link from "next/link"
-import { ArrowRight, Phone, Mail, MessageCircle } from "lucide-react"
-import contactData from "@/data/contact.json"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
+import { ArrowRight, Phone, Mail, MessageCircle } from "lucide-react";
+import * as vars from "@/lib/vars";
 
 export function CTASection() {
-  const whatsappUrl = `https://wa.me/${contactData.whatsapp[0].replace("+", "")}`
+  const whatsappUrl = `https://wa.me/${vars.phones[0].replace("+", "")}`;
 
   return (
     <section className="py-20 bg-primary/5">
@@ -15,10 +15,13 @@ export function CTASection() {
           <CardContent className="relative p-12">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <h2 className="text-3xl lg:text-4xl font-bold text-balance">Prêt à Démarrer Votre Projet ?</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold text-balance">
+                  Prêt à Démarrer Votre Projet ?
+                </h2>
                 <p className="text-xl text-muted-foreground text-pretty">
-                  Contactez-nous dès aujourd'hui pour un devis gratuit et une consultation personnalisée. Nous vous
-                  accompagnons de la modélisation 3D à la livraison finale.
+                  Contactez-nous dès aujourd'hui pour un devis gratuit et une
+                  consultation personnalisée. Nous vous accompagnons de la
+                  modélisation 3D à la livraison finale.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -29,7 +32,11 @@ export function CTASection() {
                     </Link>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
-                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <MessageCircle className="mr-2 h-4 w-4" />
                       WhatsApp
                     </a>
@@ -43,21 +50,27 @@ export function CTASection() {
                     <Phone className="h-6 w-6 text-primary" />
                     <div>
                       <p className="font-semibold">Appelez-nous</p>
-                      <p className="text-sm text-muted-foreground">{contactData.phones[0]}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {vars.phones[0]}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 p-4 bg-background/80 rounded-lg">
                     <Mail className="h-6 w-6 text-primary" />
                     <div>
                       <p className="font-semibold">Écrivez-nous</p>
-                      <p className="text-sm text-muted-foreground">{contactData.email}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {vars.email}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 p-4 bg-background/80 rounded-lg">
                     <MessageCircle className="h-6 w-6 text-primary" />
                     <div>
                       <p className="font-semibold">WhatsApp</p>
-                      <p className="text-sm text-muted-foreground">Réponse rapide garantie</p>
+                      <p className="text-sm text-muted-foreground">
+                        Réponse rapide garantie
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -67,5 +80,5 @@ export function CTASection() {
         </Card>
       </div>
     </section>
-  )
+  );
 }

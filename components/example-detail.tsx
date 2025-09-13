@@ -1,11 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import Link from "next/link"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 import {
   ArrowLeft,
   MessageCircle,
@@ -17,49 +23,61 @@ import {
   Play,
   Phone,
   Mail,
-} from "lucide-react"
-import type { Example } from "@/lib/types"
-import contactData from "@/data/contact.json"
-import servicesData from "@/data/services.json"
+} from "lucide-react";
+import type { Example } from "@/lib/types";
+import * as vars from "@/lib/vars";
+import servicesData from "@/data/services.json";
 
 interface ExampleDetailProps {
-  example: Example
+  example: Example;
 }
 
 export function ExampleDetail({ example }: ExampleDetailProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const service = servicesData.services.find((s) => s.id === example.serviceUsed)
+  const service = servicesData.services.find(
+    (s) => s.id === example.serviceUsed
+  );
 
   const whatsappMessage = encodeURIComponent(
-    `Bonjour, j'ai vu votre réalisation "${example.title}" et je suis intéressé(e) par un projet similaire. Pouvez-vous me donner plus d'informations ?`,
-  )
-  const whatsappUrl = `https://wa.me/${contactData.whatsapp[0].replace("+", "")}?text=${whatsappMessage}`
+    `Bonjour, j'ai vu votre réalisation "${example.title}" et je suis intéressé(e) par un projet similaire. Pouvez-vous me donner plus d'informations ?`
+  );
+  const whatsappUrl = `https://wa.me/${vars.phones[0].replace(
+    "+",
+    ""
+  )}?text=${whatsappMessage}`;
 
   const categoryLabels = {
     construction: "Construction",
     forage: "Forage",
     infrastructure: "Infrastructure",
     finitions: "Finitions",
-  }
+  };
 
   const getCategoryColor = (category: string) => {
     const colors = {
-      construction: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+      construction:
+        "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
       forage: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
-      infrastructure: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-      finitions: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
-    }
-    return colors[category as keyof typeof colors] || "bg-gray-100 text-gray-800"
-  }
+      infrastructure:
+        "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+      finitions:
+        "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
+    };
+    return (
+      colors[category as keyof typeof colors] || "bg-gray-100 text-gray-800"
+    );
+  };
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % example.images.length)
-  }
+    setCurrentImageIndex((prev) => (prev + 1) % example.images.length);
+  };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + example.images.length) % example.images.length)
-  }
+    setCurrentImageIndex(
+      (prev) => (prev - 1 + example.images.length) % example.images.length
+    );
+  };
 
   return (
     <div className="py-8">
@@ -79,9 +97,15 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
           <div className="lg:col-span-2 space-y-8">
             {/* Header */}
             <div className="space-y-4">
-              <Badge className={getCategoryColor(example.category)}>{categoryLabels[example.category]}</Badge>
-              <h1 className="text-3xl lg:text-4xl font-bold text-balance">{example.title}</h1>
-              <p className="text-xl text-muted-foreground text-pretty">{example.description}</p>
+              <Badge className={getCategoryColor(example.category)}>
+                {categoryLabels[example.category]}
+              </Badge>
+              <h1 className="text-3xl lg:text-4xl font-bold text-balance">
+                {example.title}
+              </h1>
+              <p className="text-xl text-muted-foreground text-pretty">
+                {example.description}
+              </p>
             </div>
 
             {/* Image Gallery */}
@@ -122,7 +146,9 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
                       className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${
-                        index === currentImageIndex ? "border-primary" : "border-transparent"
+                        index === currentImageIndex
+                          ? "border-primary"
+                          : "border-transparent"
                       }`}
                     >
                       <img
@@ -142,7 +168,10 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
                 <h2 className="text-2xl font-bold">Vidéos du Projet</h2>
                 <div className="grid gap-4">
                   {example.videos.map((video, index) => (
-                    <div key={index} className="relative w-full h-64 rounded-xl overflow-hidden bg-muted">
+                    <div
+                      key={index}
+                      className="relative w-full h-64 rounded-xl overflow-hidden bg-muted"
+                    >
                       <div className="flex items-center justify-center h-full">
                         <Play className="h-12 w-12 text-primary" />
                       </div>
@@ -168,23 +197,32 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
                   <CardContent className="space-y-3">
                     <div className="flex items-center gap-2">
                       <MapPin className="h-4 w-4 text-primary" />
-                      <span className="text-sm text-muted-foreground">Localisation:</span>
+                      <span className="text-sm text-muted-foreground">
+                        Localisation:
+                      </span>
                       <span className="font-medium">{example.location}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4 text-primary" />
-                      <span className="text-sm text-muted-foreground">Achevé en:</span>
+                      <span className="text-sm text-muted-foreground">
+                        Achevé en:
+                      </span>
                       <span className="font-medium">
-                        {new Date(example.completionDate).toLocaleDateString("fr-FR", {
-                          year: "numeric",
-                          month: "long",
-                        })}
+                        {new Date(example.completionDate).toLocaleDateString(
+                          "fr-FR",
+                          {
+                            year: "numeric",
+                            month: "long",
+                          }
+                        )}
                       </span>
                     </div>
                     {example.client && (
                       <div className="flex items-center gap-2">
                         <User className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-muted-foreground">Client:</span>
+                        <span className="text-sm text-muted-foreground">
+                          Client:
+                        </span>
                         <span className="font-medium">{example.client}</span>
                       </div>
                     )}
@@ -199,31 +237,51 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
                   <CardContent className="space-y-3">
                     {example.specifications.surface && (
                       <div>
-                        <span className="text-sm text-muted-foreground">Surface:</span>
-                        <span className="font-medium ml-2">{example.specifications.surface}</span>
+                        <span className="text-sm text-muted-foreground">
+                          Surface:
+                        </span>
+                        <span className="font-medium ml-2">
+                          {example.specifications.surface}
+                        </span>
                       </div>
                     )}
                     {example.specifications.duration && (
                       <div>
-                        <span className="text-sm text-muted-foreground">Durée:</span>
-                        <span className="font-medium ml-2">{example.specifications.duration}</span>
+                        <span className="text-sm text-muted-foreground">
+                          Durée:
+                        </span>
+                        <span className="font-medium ml-2">
+                          {example.specifications.duration}
+                        </span>
                       </div>
                     )}
                     {example.specifications.budget && (
                       <div>
-                        <span className="text-sm text-muted-foreground">Budget:</span>
-                        <span className="font-semibold text-primary ml-2">{example.specifications.budget}</span>
+                        <span className="text-sm text-muted-foreground">
+                          Budget:
+                        </span>
+                        <span className="font-semibold text-primary ml-2">
+                          {example.specifications.budget}
+                        </span>
                       </div>
                     )}
                     {example.specifications.materials && (
                       <div>
-                        <span className="text-sm text-muted-foreground">Matériaux:</span>
+                        <span className="text-sm text-muted-foreground">
+                          Matériaux:
+                        </span>
                         <div className="mt-1 flex flex-wrap gap-1">
-                          {example.specifications.materials.map((material, index) => (
-                            <Badge key={index} variant="outline" className="text-xs">
-                              {material}
-                            </Badge>
-                          ))}
+                          {example.specifications.materials.map(
+                            (material, index) => (
+                              <Badge
+                                key={index}
+                                variant="outline"
+                                className="text-xs"
+                              >
+                                {material}
+                              </Badge>
+                            )
+                          )}
                         </div>
                       </div>
                     )}
@@ -246,11 +304,19 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
                     <span className="text-2xl">{service.icon}</span>
                     <div>
                       <p className="font-semibold">{service.title}</p>
-                      <p className="text-sm text-muted-foreground">{service.description}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {service.description}
+                      </p>
                     </div>
                   </div>
-                  <Button variant="outline" asChild className="w-full bg-transparent">
-                    <Link href={`/services/${service.id}`}>Voir ce Service</Link>
+                  <Button
+                    variant="outline"
+                    asChild
+                    className="w-full bg-transparent"
+                  >
+                    <Link href={`/services/${service.id}`}>
+                      Voir ce Service
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -260,11 +326,17 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
             <Card className="bg-primary/5 border-primary/20">
               <CardHeader>
                 <CardTitle>Projet Similaire ?</CardTitle>
-                <CardDescription>Contactez-nous pour discuter de votre projet</CardDescription>
+                <CardDescription>
+                  Contactez-nous pour discuter de votre projet
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Button asChild className="w-full" size="lg">
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <MessageCircle className="mr-2 h-4 w-4" />
                     Discuter sur WhatsApp
                   </a>
@@ -275,15 +347,19 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center gap-2">
                     <Phone className="h-4 w-4 text-primary" />
-                    <span>{contactData.phones[0]}</span>
+                    <span>{vars.phones[0]}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="h-4 w-4 text-primary" />
-                    <span>{contactData.email}</span>
+                    <span>{vars.email}</span>
                   </div>
                 </div>
 
-                <Button variant="outline" asChild className="w-full bg-transparent">
+                <Button
+                  variant="outline"
+                  asChild
+                  className="w-full bg-transparent"
+                >
                   <Link href="/contact">Demander un Devis</Link>
                 </Button>
               </CardContent>
@@ -295,7 +371,11 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
                 <CardTitle>Autres Réalisations</CardTitle>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" asChild className="w-full bg-transparent">
+                <Button
+                  variant="outline"
+                  asChild
+                  className="w-full bg-transparent"
+                >
                   <Link href="/exemples">Voir Toutes Nos Réalisations</Link>
                 </Button>
               </CardContent>
@@ -304,5 +384,5 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

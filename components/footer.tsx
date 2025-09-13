@@ -1,10 +1,10 @@
-import Link from "next/link"
-import { Building2, Phone, Mail, MapPin, MessageCircle } from "lucide-react"
-import contactData from "@/data/contact.json"
+import Link from "next/link";
+import { Building2, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import * as vars from "@/lib/vars";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
-  const whatsappUrl = `https://wa.me/${contactData.whatsapp[0].replace("+", "")}`
+  const currentYear = new Date().getFullYear();
+  const whatsappUrl = `https://wa.me/${vars.phones[0].replace("+", "")}`;
 
   return (
     <footer className="bg-card border-t">
@@ -17,8 +17,9 @@ export function Footer() {
               <span className="text-xl font-bold text-primary">Desingora</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              Votre partenaire BTP de confiance au Cameroun. Spécialistes en construction, finitions, forages et
-              infrastructures avec modélisation 3D.
+              Votre partenaire BTP de confiance au Cameroun. Spécialistes en
+              construction, finitions, forages et infrastructures avec
+              modélisation 3D.
             </p>
           </div>
 
@@ -27,22 +28,34 @@ export function Footer() {
             <h3 className="font-semibold">Liens Rapides</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Accueil
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/services"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/exemples" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/exemples"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Réalisations
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/contact"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -54,7 +67,9 @@ export function Footer() {
             <h3 className="font-semibold">Nos Services</h3>
             <ul className="space-y-2 text-sm">
               <li className="text-muted-foreground">Construction de maisons</li>
-              <li className="text-muted-foreground">Finitions intérieures/extérieures</li>
+              <li className="text-muted-foreground">
+                Finitions intérieures/extérieures
+              </li>
               <li className="text-muted-foreground">Forage de puits</li>
               <li className="text-muted-foreground">Rigoles et drainage</li>
               <li className="text-muted-foreground">Poteaux électriques</li>
@@ -67,15 +82,15 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">{contactData.address}</span>
+                <span className="text-muted-foreground">{vars.address}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">{contactData.phones[0]}</span>
+                <span className="text-muted-foreground">{vars.phones[0]}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">{contactData.email}</span>
+                <span className="text-muted-foreground">{vars.email}</span>
               </div>
               <div className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4 text-primary" />
@@ -97,5 +112,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

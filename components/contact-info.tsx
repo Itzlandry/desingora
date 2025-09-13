@@ -1,12 +1,18 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Phone, Mail, MapPin, MessageCircle, Clock, Users } from "lucide-react"
-import contactData from "@/data/contact.json"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Phone, Mail, MapPin, MessageCircle, Clock, Users } from "lucide-react";
+import * as vars from "@/lib/vars";
 
 export function ContactInfo() {
-  const whatsappUrl = `https://wa.me/${contactData.whatsapp[0].replace("+", "")}`
-  const whatsappUrl2 = `https://wa.me/${contactData.whatsapp[1].replace("+", "")}`
+  const whatsappUrl = `https://wa.me/${vars.phones[0].replace("+", "")}`;
+  const whatsappUrl2 = `https://wa.me/${vars.phones[1].replace("+", "")}`;
 
   return (
     <div className="space-y-6">
@@ -14,7 +20,9 @@ export function ContactInfo() {
       <Card>
         <CardHeader>
           <CardTitle>Nos Coordonnées</CardTitle>
-          <CardDescription>Plusieurs moyens de nous contacter selon votre préférence</CardDescription>
+          <CardDescription>
+            Plusieurs moyens de nous contacter selon votre préférence
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Address */}
@@ -22,7 +30,7 @@ export function ContactInfo() {
             <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
             <div>
               <p className="font-semibold">Adresse</p>
-              <p className="text-muted-foreground text-sm">{contactData.address}</p>
+              <p className="text-muted-foreground text-sm">{vars.address}</p>
             </div>
           </div>
 
@@ -31,9 +39,12 @@ export function ContactInfo() {
             <Phone className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
             <div className="space-y-2">
               <p className="font-semibold">Téléphones</p>
-              {contactData.phones.map((phone, index) => (
+              {vars.phones.map((phone, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <a href={`tel:${phone}`} className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href={`tel:${phone}`}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {phone}
                   </a>
                   <Badge variant="outline" className="text-xs">
@@ -50,10 +61,10 @@ export function ContactInfo() {
             <div>
               <p className="font-semibold">Email</p>
               <a
-                href={`mailto:${contactData.email}`}
+                href={`mailto:${vars.email}`}
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                {contactData.email}
+                {vars.email}
               </a>
             </div>
           </div>
@@ -64,16 +75,34 @@ export function ContactInfo() {
             <div className="space-y-3">
               <p className="font-semibold">WhatsApp</p>
               <div className="space-y-2">
-                <Button asChild variant="outline" size="sm" className="w-full justify-start bg-transparent">
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className="w-full justify-start bg-transparent"
+                >
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <MessageCircle className="mr-2 h-4 w-4" />
-                    {contactData.whatsapp[0]} - Équipe 1
+                    {vars.phones[0]} - Équipe 1
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="sm" className="w-full justify-start bg-transparent">
-                  <a href={whatsappUrl2} target="_blank" rel="noopener noreferrer">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className="w-full justify-start bg-transparent"
+                >
+                  <a
+                    href={whatsappUrl2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <MessageCircle className="mr-2 h-4 w-4" />
-                    {contactData.whatsapp[1]} - Équipe 2
+                    {vars.phones[1]} - Équipe 2
                   </a>
                 </Button>
               </div>
@@ -105,7 +134,8 @@ export function ContactInfo() {
           </div>
           <div className="pt-2 border-t">
             <p className="text-sm text-muted-foreground">
-              <strong>Urgences 24h/7j</strong> - Contactez-nous sur WhatsApp pour les urgences
+              <strong>Urgences 24h/7j</strong> - Contactez-nous sur WhatsApp
+              pour les urgences
             </p>
           </div>
         </CardContent>
@@ -122,7 +152,9 @@ export function ContactInfo() {
         <CardContent className="space-y-3">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-primary rounded-full" />
-            <span className="text-sm">Modélisation 3D gratuite avec chaque projet</span>
+            <span className="text-sm">
+              Modélisation 3D gratuite avec chaque projet
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-primary rounded-full" />
@@ -151,17 +183,19 @@ export function ContactInfo() {
       <Card className="bg-destructive/5 border-destructive/20">
         <CardHeader>
           <CardTitle className="text-destructive">Contact d'Urgence</CardTitle>
-          <CardDescription>Pour les urgences BTP (fuites, effondrements, etc.)</CardDescription>
+          <CardDescription>
+            Pour les urgences BTP (fuites, effondrements, etc.)
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Button asChild variant="destructive" className="w-full">
-            <a href={`tel:${contactData.phones[0]}`}>
+            <a href={`tel:${vars.phones[0]}`}>
               <Phone className="mr-2 h-4 w-4" />
-              Appeler Maintenant - {contactData.phones[0]}
+              Appeler Maintenant - {vars.phones[0]}
             </a>
           </Button>
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
