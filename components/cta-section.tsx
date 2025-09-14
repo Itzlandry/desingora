@@ -51,7 +51,7 @@ export function CTASection() {
                     <div>
                       <p className="font-semibold">Appelez-nous</p>
                       <p className="text-sm text-muted-foreground">
-                        {vars.phones[0]}
+                        {vars.phones.join(" / ")}
                       </p>
                     </div>
                   </div>

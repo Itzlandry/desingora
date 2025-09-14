@@ -30,32 +30,32 @@ export function HeroSection() {
 
             {/* Features */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="flex items-center gap-3 p-4 rounded-lg bg-card">
-                <Building2 className="h-8 w-8 text-primary" />
-                <div>
-                  <p className="font-semibold">Construction</p>
-                  <p className="text-sm text-muted-foreground">
-                    Maisons clé en main
-                  </p>
-                </div>
+              <div className="flex flex-col items-center text-center gap-2 p-4 rounded-lg bg-card">
+                <span className="flex items-center justify-center w-12 h-12 mb-2">
+                  <Building2 className="h-8 w-8 text-primary" />
+                </span>
+                <p className="font-semibold">Construction</p>
+                <p className="text-sm text-muted-foreground">
+                  Maisons clé en main
+                </p>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-lg bg-card">
-                <Droplets className="h-8 w-8 text-primary" />
-                <div>
-                  <p className="font-semibold">Forage</p>
-                  <p className="text-sm text-muted-foreground">
-                    Puits d'eau potable
-                  </p>
-                </div>
+              <div className="flex flex-col items-center text-center gap-2 p-4 rounded-lg bg-card">
+                <span className="flex items-center justify-center w-12 h-12 mb-2">
+                  <Droplets className="h-8 w-8 text-primary" />
+                </span>
+                <p className="font-semibold">Forage</p>
+                <p className="text-sm text-muted-foreground">
+                  Puits d'eau potable
+                </p>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-lg bg-card">
-                <Zap className="h-8 w-8 text-primary" />
-                <div>
-                  <p className="font-semibold">Infrastructure</p>
-                  <p className="text-sm text-muted-foreground">
-                    Rigoles & poteaux
-                  </p>
-                </div>
+              <div className="flex flex-col items-center text-center gap-2 p-4 rounded-lg bg-card">
+                <span className="flex items-center justify-center w-12 h-12 mb-2">
+                  <Zap className="h-8 w-8 text-primary" />
+                </span>
+                <p className="font-semibold">Infrastructure</p>
+                <p className="text-sm text-muted-foreground">
+                  Rigoles & poteaux
+                </p>
               </div>
             </div>
 
@@ -70,28 +70,6 @@ export function HeroSection() {
               <Button variant="outline" size="lg" asChild>
                 <Link href="/services">Nos Services</Link>
               </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t">
-              <div className="text-center">
-                <p className="text-2xl font-bold text-primary">50+</p>
-                <p className="text-sm text-muted-foreground">
-                  Projets Réalisés
-                </p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-primary">5+</p>
-                <p className="text-sm text-muted-foreground">
-                  Années d'Expérience
-                </p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-primary">100%</p>
-                <p className="text-sm text-muted-foreground">
-                  Clients Satisfaits
-                </p>
-              </div>
             </div>
           </div>
 

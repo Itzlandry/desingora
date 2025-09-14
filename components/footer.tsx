@@ -84,24 +84,15 @@ export function Footer() {
                 <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground">{vars.address}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">{vars.phones[0]}</span>
-              </div>
+              {vars.phones.map((phone, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 text-primary" />
+                  <span className="text-muted-foreground">{phone}</span>
+                </div>
+              ))}
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
                 <span className="text-muted-foreground">{vars.email}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MessageCircle className="h-4 w-4 text-primary" />
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  WhatsApp
-                </a>
               </div>
             </div>
           </div>

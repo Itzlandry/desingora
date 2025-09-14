@@ -170,12 +170,14 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
                   {example.videos.map((video, index) => (
                     <div
                       key={index}
-                      className="relative w-full h-64 rounded-xl overflow-hidden bg-muted"
+                      className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden bg-muted"
                     >
-                      <div className="flex items-center justify-center h-full">
-                        <Play className="h-12 w-12 text-primary" />
-                      </div>
-                      <p className="absolute bottom-4 left-4 text-white bg-black/50 px-2 py-1 rounded text-sm">
+                      <video
+                        controls
+                        className="w-full h-full object-cover"
+                        src={video}
+                      />
+                      <p className="absolute top-4 left-4 text-white bg-black/50 px-2 py-1 rounded text-sm">
                         Vidéo {index + 1}
                       </p>
                     </div>
@@ -345,10 +347,12 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
                 <Separator />
 
                 <div className="space-y-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Phone className="h-4 w-4 text-primary" />
-                    <span>{vars.phones[0]}</span>
-                  </div>
+                  {vars.phones.map((phone, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <Phone className="h-4 w-4 text-primary" />
+                      <span>{phone}</span>
+                    </div>
+                  ))}
                   <div className="flex items-center gap-2">
                     <Mail className="h-4 w-4 text-primary" />
                     <span>{vars.email}</span>

@@ -201,10 +201,12 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                 <Separator />
 
                 <div className="space-y-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Phone className="h-4 w-4 text-primary" />
-                    <span>{vars.phones[0]}</span>
-                  </div>
+                  {vars.phones.map((phone, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <Phone className="h-4 w-4 text-primary" />
+                      <span>{phone}</span>
+                    </div>
+                  ))}
                   <div className="flex items-center gap-2">
                     <Mail className="h-4 w-4 text-primary" />
                     <span>{vars.email}</span>

@@ -1,32 +1,55 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
-import { Analytics } from "@vercel/analytics/next"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Suspense } from "react"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { Analytics } from "@vercel/analytics/next";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Suspense } from "react";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Desingora - Entreprise BTP au Cameroun",
-  description: "Spécialiste en finitions, forages, rigoles, poteaux et construction de maisons avec modélisation 3D",
-}
+  description:
+    "Spécialiste en finitions, forages, rigoles, poteaux et construction de maisons avec modélisation 3D",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
+      <head>
+        <meta
+          name="description"
+          content="Spécialiste en finitions, forages, rigoles, poteaux et construction de maisons avec modélisation 3D"
+        />
+        <meta
+          property="og:title"
+          content="Desingora - Entreprise BTP au Cameroun"
+        />
+        <meta
+          property="og:description"
+          content="Spécialiste en finitions, forages, rigoles, poteaux et construction de maisons avec modélisation 3D"
+        />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:url" content="https://www.desingora.com" />
+        <link rel="icon" href="/logo.png" type="image/png" />
+      </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
             {children}
           </ThemeProvider>
         </Suspense>
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

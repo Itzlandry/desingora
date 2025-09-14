@@ -47,9 +47,6 @@ export function ContactInfo() {
                   >
                     {phone}
                   </a>
-                  <Badge variant="outline" className="text-xs">
-                    Équipe {index + 1}
-                  </Badge>
                 </div>
               ))}
             </div>
@@ -87,7 +84,7 @@ export function ContactInfo() {
                     rel="noopener noreferrer"
                   >
                     <MessageCircle className="mr-2 h-4 w-4" />
-                    {vars.phones[0]} - Équipe 1
+                    {vars.phones[0]}
                   </a>
                 </Button>
                 <Button
@@ -102,7 +99,7 @@ export function ContactInfo() {
                     rel="noopener noreferrer"
                   >
                     <MessageCircle className="mr-2 h-4 w-4" />
-                    {vars.phones[1]} - Équipe 2
+                    {vars.phones[1]}
                   </a>
                 </Button>
               </div>
@@ -176,24 +173,6 @@ export function ContactInfo() {
             <div className="w-2 h-2 bg-primary rounded-full" />
             <span className="text-sm">Garantie sur tous nos travaux</span>
           </div>
-        </CardContent>
-      </Card>
-
-      {/* Emergency Contact */}
-      <Card className="bg-destructive/5 border-destructive/20">
-        <CardHeader>
-          <CardTitle className="text-destructive">Contact d'Urgence</CardTitle>
-          <CardDescription>
-            Pour les urgences BTP (fuites, effondrements, etc.)
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Button asChild variant="destructive" className="w-full">
-            <a href={`tel:${vars.phones[0]}`}>
-              <Phone className="mr-2 h-4 w-4" />
-              Appeler Maintenant - {vars.phones[0]}
-            </a>
-          </Button>
         </CardContent>
       </Card>
     </div>
