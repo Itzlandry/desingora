@@ -10,7 +10,6 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Desingora - Entreprise BTP au Cameroun",
   description: "Spécialiste en finitions, forages, rigoles, poteaux et construction de maisons avec modélisation 3D",
-  generator: "v0.app",
 }
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import Link from "next/link"
-import { ArrowRight, Building2, Zap, Droplets } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { ArrowRight, Building2, Zap, Droplets } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -18,11 +18,13 @@ export function HeroSection() {
                 Modélisation 3D Incluse
               </Badge>
               <h1 className="text-4xl lg:text-6xl font-bold text-balance leading-tight">
-                Votre Partenaire BTP de <span className="text-primary">Confiance</span> au Cameroun
+                Votre Partenaire BTP de{" "}
+                <span className="text-primary">Confiance</span> au Cameroun
               </h1>
               <p className="text-xl text-muted-foreground text-pretty max-w-lg">
-                Spécialistes en finitions, forages, infrastructures et construction de maisons. Chaque projet commence
-                par une modélisation 3D pour visualiser votre vision.
+                Spécialistes en finitions, forages, infrastructures et
+                construction de maisons. Chaque projet commence par une
+                modélisation 3D pour visualiser votre vision.
               </p>
             </div>
 
@@ -32,21 +34,27 @@ export function HeroSection() {
                 <Building2 className="h-8 w-8 text-primary" />
                 <div>
                   <p className="font-semibold">Construction</p>
-                  <p className="text-sm text-muted-foreground">Maisons clé en main</p>
+                  <p className="text-sm text-muted-foreground">
+                    Maisons clé en main
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-card">
                 <Droplets className="h-8 w-8 text-primary" />
                 <div>
                   <p className="font-semibold">Forage</p>
-                  <p className="text-sm text-muted-foreground">Puits d'eau potable</p>
+                  <p className="text-sm text-muted-foreground">
+                    Puits d'eau potable
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-card">
                 <Zap className="h-8 w-8 text-primary" />
                 <div>
                   <p className="font-semibold">Infrastructure</p>
-                  <p className="text-sm text-muted-foreground">Rigoles & poteaux</p>
+                  <p className="text-sm text-muted-foreground">
+                    Rigoles & poteaux
+                  </p>
                 </div>
               </div>
             </div>
@@ -68,15 +76,21 @@ export function HeroSection() {
             <div className="grid grid-cols-3 gap-8 pt-8 border-t">
               <div className="text-center">
                 <p className="text-2xl font-bold text-primary">50+</p>
-                <p className="text-sm text-muted-foreground">Projets Réalisés</p>
+                <p className="text-sm text-muted-foreground">
+                  Projets Réalisés
+                </p>
               </div>
               <div className="text-center">
                 <p className="text-2xl font-bold text-primary">5+</p>
-                <p className="text-sm text-muted-foreground">Années d'Expérience</p>
+                <p className="text-sm text-muted-foreground">
+                  Années d'Expérience
+                </p>
               </div>
               <div className="text-center">
                 <p className="text-2xl font-bold text-primary">100%</p>
-                <p className="text-sm text-muted-foreground">Clients Satisfaits</p>
+                <p className="text-sm text-muted-foreground">
+                  Clients Satisfaits
+                </p>
               </div>
             </div>
           </div>
@@ -98,7 +112,9 @@ export function HeroSection() {
                 </div>
                 <div>
                   <p className="font-semibold">Modélisation 3D</p>
-                  <p className="text-sm text-muted-foreground">Visualisez avant de construire</p>
+                  <p className="text-sm text-muted-foreground">
+                    Visualisez avant de construire
+                  </p>
                 </div>
               </div>
             </div>
@@ -106,5 +122,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

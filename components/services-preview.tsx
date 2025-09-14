@@ -1,13 +1,19 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-import servicesData from "@/data/services.json"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import servicesData from "@/data/services.json";
 
 export function ServicesPreview() {
   // Show first 3 services
-  const featuredServices = servicesData.services.slice(0, 3)
+  const featuredServices = servicesData.services.slice(0, 3);
 
   return (
     <section className="py-20 bg-muted/30">
@@ -16,15 +22,21 @@ export function ServicesPreview() {
           <Badge variant="secondary" className="w-fit mx-auto">
             Nos Services
           </Badge>
-          <h2 className="text-3xl lg:text-4xl font-bold text-balance">Des Solutions Complètes pour Vos Projets BTP</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-balance">
+            Des Solutions Complètes pour Vos Projets BTP
+          </h2>
           <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
-            De la conception 3D à la réalisation, nous vous accompagnons à chaque étape de votre projet
+            De la conception 3D à la réalisation, nous vous accompagnons à
+            chaque étape de votre projet
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {featuredServices.map((service) => (
-            <Card key={service.id} className="group hover:shadow-lg transition-all duration-300">
+            <Card
+              key={service.id}
+              className="group hover:shadow-lg transition-all duration-300"
+            >
               <CardHeader>
                 <div className="w-full h-48 rounded-lg overflow-hidden mb-4">
                   <img
@@ -37,13 +49,17 @@ export function ServicesPreview() {
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                   <span className="text-2xl">{service.icon}</span>
                 </div>
-                <CardDescription className="text-base">{service.description}</CardDescription>
+                <CardDescription className="text-base">
+                  {service.description}
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">À partir de</span>
-                    <span className="font-semibold text-primary">{service.price}</span>
+                    <span className="font-semibold text-primary">
+                      {service.price}
+                    </span>
                   </div>
                   {service.includes3DModeling && (
                     <Badge variant="outline" className="w-fit">
@@ -72,5 +88,5 @@ export function ServicesPreview() {
         </div>
       </div>
     </section>
-  )
+  );
 }
