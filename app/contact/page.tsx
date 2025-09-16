@@ -1,8 +1,8 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
-import { ContactForm } from "@/components/contact-form"
-import { ContactInfo } from "@/components/contact-info"
-import { Badge } from "@/components/ui/badge"
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { ContactForm } from "@/components/contact-form";
+import { ContactInfo } from "@/components/contact-info";
+import { Badge } from "@/components/ui/badge";
 
 export default function ContactPage() {
   return (
@@ -16,10 +16,13 @@ export default function ContactPage() {
               <Badge variant="secondary" className="w-fit mx-auto">
                 Contact
               </Badge>
-              <h1 className="text-4xl lg:text-5xl font-bold text-balance">Parlons de Votre Projet</h1>
+              <h1 className="text-4xl lg:text-5xl font-bold text-balance">
+                Parlons de Votre Projet
+              </h1>
               <p className="text-xl text-muted-foreground text-pretty">
-                Contactez-nous dès aujourd'hui pour un devis gratuit et une consultation personnalisée. Notre équipe
-                vous accompagne de la conception 3D à la réalisation finale.
+                Contactez-nous dès aujourd'hui pour obtenir un devis et une
+                consultation personnalisée. Notre équipe vous accompagne de la
+                conception 3D à la réalisation finale.
               </p>
             </div>
           </div>
@@ -37,5 +40,5 @@ export default function ContactPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

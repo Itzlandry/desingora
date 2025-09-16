@@ -55,12 +55,6 @@ export function ServicesPreview() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">À partir de</span>
-                    <span className="font-semibold text-primary">
-                      {service.price}
-                    </span>
-                  </div>
                   {service.includes3DModeling && (
                     <Badge variant="outline" className="w-fit">
                       Modélisation 3D incluse

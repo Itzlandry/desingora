@@ -10,33 +10,20 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { ArrowRight, MapPin, Calendar } from "lucide-react";
 import examplesData from "@/data/examples.json";
+import { categoryColors, categoryLabels } from "@/lib/vars";
 
 export function ExamplesPreview() {
   // Show first 3 examples
   const featuredExamples = examplesData.examples.slice(0, 3);
 
   const getCategoryLabel = (category: string) => {
-    const labels = {
-      construction: "Construction",
-      forage: "Forage",
-      infrastructure: "Infrastructure",
-      finitions: "Finitions",
-    };
-    return labels[category as keyof typeof labels] || category;
+    return categoryLabels[category as keyof typeof categoryLabels] || category;
   };
 
   const getCategoryColor = (category: string) => {
-    const colors = {
-      construction:
-        "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-      forage: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
-      infrastructure:
-        "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-      finitions:
-        "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
-    };
     return (
-      colors[category as keyof typeof colors] || "bg-gray-100 text-gray-800"
+      categoryColors[category as keyof typeof categoryColors] ||
+      "bg-gray-100 text-gray-800"
     );
   };
 
@@ -102,14 +89,6 @@ export function ExamplesPreview() {
                       }
                     )}
                   </div>
-                  {example.specifications.budget && (
-                    <div className="text-sm">
-                      <span className="text-muted-foreground">Budget: </span>
-                      <span className="font-semibold text-primary">
-                        {example.specifications.budget}
-                      </span>
-                    </div>
-                  )}
                   <Button asChild className="w-full">
                     <Link href={`/exemples/${example.id}`}>
                       Voir le Projet

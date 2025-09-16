@@ -47,25 +47,10 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
     ""
   )}?text=${whatsappMessage}`;
 
-  const categoryLabels = {
-    construction: "Construction",
-    forage: "Forage",
-    infrastructure: "Infrastructure",
-    finitions: "Finitions",
-  };
-
   const getCategoryColor = (category: string) => {
-    const colors = {
-      construction:
-        "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-      forage: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
-      infrastructure:
-        "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-      finitions:
-        "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
-    };
     return (
-      colors[category as keyof typeof colors] || "bg-gray-100 text-gray-800"
+      vars.categoryColors[category as keyof typeof vars.categoryColors] ||
+      "bg-gray-100 text-gray-800"
     );
   };
 
@@ -98,7 +83,7 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
             {/* Header */}
             <div className="space-y-4">
               <Badge className={getCategoryColor(example.category)}>
-                {categoryLabels[example.category]}
+                {vars.categoryLabels[example.category]}
               </Badge>
               <h1 className="text-3xl lg:text-4xl font-bold text-balance">
                 {example.title}
@@ -219,74 +204,6 @@ export function ExampleDetail({ example }: ExampleDetailProps) {
                         )}
                       </span>
                     </div>
-                    {example.client && (
-                      <div className="flex items-center gap-2">
-                        <User className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-muted-foreground">
-                          Client:
-                        </span>
-                        <span className="font-medium">{example.client}</span>
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
-
-                {/* Specifications */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Spécifications</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    {example.specifications.surface && (
-                      <div>
-                        <span className="text-sm text-muted-foreground">
-                          Surface:
-                        </span>
-                        <span className="font-medium ml-2">
-                          {example.specifications.surface}
-                        </span>
-                      </div>
-                    )}
-                    {example.specifications.duration && (
-                      <div>
-                        <span className="text-sm text-muted-foreground">
-                          Durée:
-                        </span>
-                        <span className="font-medium ml-2">
-                          {example.specifications.duration}
-                        </span>
-                      </div>
-                    )}
-                    {example.specifications.budget && (
-                      <div>
-                        <span className="text-sm text-muted-foreground">
-                          Budget:
-                        </span>
-                        <span className="font-semibold text-primary ml-2">
-                          {example.specifications.budget}
-                        </span>
-                      </div>
-                    )}
-                    {example.specifications.materials && (
-                      <div>
-                        <span className="text-sm text-muted-foreground">
-                          Matériaux:
-                        </span>
-                        <div className="mt-1 flex flex-wrap gap-1">
-                          {example.specifications.materials.map(
-                            (material, index) => (
-                              <Badge
-                                key={index}
-                                variant="outline"
-                                className="text-xs"
-                              >
-                                {material}
-                              </Badge>
-                            )
-                          )}
-                        </div>
-                      </div>
-                    )}
                   </CardContent>
                 </Card>
               </div>

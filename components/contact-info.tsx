@@ -118,6 +118,10 @@ export function ContactInfo() {
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="flex justify-between">
+            <span className="text-muted-foreground">Lundi - Dimanche</span>
+            <span className="font-medium">24h00 - 24h00</span>
+          </div>
+          {/* <div className="flex justify-between">
             <span className="text-muted-foreground">Lundi - Vendredi</span>
             <span className="font-medium">7h00 - 18h00</span>
           </div>
@@ -128,11 +132,11 @@ export function ContactInfo() {
           <div className="flex justify-between">
             <span className="text-muted-foreground">Dimanche</span>
             <span className="font-medium">Urgences uniquement</span>
-          </div>
+          </div> */}
           <div className="pt-2 border-t">
             <p className="text-sm text-muted-foreground">
-              <strong>Urgences 24h/7j</strong> - Contactez-nous sur WhatsApp
-              pour les urgences
+              <strong>Assistance 24h/7j</strong> — Disponible à tout moment sur
+              WhatsApp pour toute urgence.
             </p>
           </div>
         </CardContent>
@@ -149,17 +153,15 @@ export function ContactInfo() {
         <CardContent className="space-y-3">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-primary rounded-full" />
-            <span className="text-sm">
-              Modélisation 3D gratuite avec chaque projet
-            </span>
+            <span className="text-sm">Modélisation 3D avec chaque projet</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-primary rounded-full" />
-            <span className="text-sm">Devis gratuit et sans engagement</span>
+            <span className="text-sm">Devis sans engagement</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-primary rounded-full" />
-            <span className="text-sm">Équipe expérimentée et certifiée</span>
+            <span className="text-sm">Équipe expérimentée</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-primary rounded-full" />

@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Suspense } from "react";
 import "./globals.css";
+import * as vars from "@/lib/vars";
 
 export const metadata: Metadata = {
   title: "Desingora - Entreprise BTP au Cameroun",
@@ -33,9 +34,9 @@ export default function RootLayout({
           property="og:description"
           content="Spécialiste en finitions, forages, rigoles, poteaux et construction de maisons avec modélisation 3D"
         />
-        <meta property="og:image" content="/logo.png" />
-        <meta property="og:url" content="https://www.desingora.com" />
-        <link rel="icon" href="/logo.png" type="image/png" />
+        <meta property="og:image" content="/banner.jpg" />
+        <meta property="og:url" content={vars.url} />
+        <link rel="icon" href="/logo-2.png" type="image/png" />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>

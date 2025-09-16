@@ -24,6 +24,8 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { MessageCircle, Send, CheckCircle } from "lucide-react";
 import * as vars from "@/lib/vars";
+import contactData from "@/data/contact.json";
+import { toast } from "sonner";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -38,30 +40,34 @@ export function ContactForm() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const services = [
-    { value: "construction", label: "Construction de maisons" },
-    { value: "finitions-interieures", label: "Finitions intérieures" },
-    { value: "finitions-exterieures", label: "Finitions extérieures" },
-    { value: "forage", label: "Forage de puits" },
-    { value: "rigoles", label: "Rigoles et drainage" },
-    { value: "poteaux", label: "Poteaux électriques" },
-    { value: "autre", label: "Autre service" },
-  ];
-
-  const budgetRanges = [
-    { value: "moins-1m", label: "Moins de 1,000,000 FCFA" },
-    { value: "1m-5m", label: "1,000,000 - 5,000,000 FCFA" },
-    { value: "5m-10m", label: "5,000,000 - 10,000,000 FCFA" },
-    { value: "10m-20m", label: "10,000,000 - 20,000,000 FCFA" },
-    { value: "plus-20m", label: "Plus de 20,000,000 FCFA" },
-    { value: "a-discuter", label: "À discuter" },
-  ];
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          location: formData.location,
+          budget: formData.budget,
+          message: formData.message,
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error || "Une erreur est survenue");
+      }
+      toast.success("Demande de devis envoyée avec succès");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      toast.error(message);
+    } finally {
+      setIsSubmitted(false);
+    }
   };
 
   const handleWhatsAppContact = () => {
@@ -71,13 +77,13 @@ export function ContactForm() {
 Détails:
 - Nom: ${formData.name}
 - Service: ${
-        services.find((s) => s.value === formData.service)?.label ||
+        contactData.services.find((s) => s.value === formData.service)?.label ||
         "Non spécifié"
       }
 - Localisation: ${formData.location || "Non spécifiée"}
 - Budget: ${
-        budgetRanges.find((b) => b.value === formData.budget)?.label ||
-        "Non spécifié"
+        contactData.budgetRanges.find((b) => b.value === formData.budget)
+          ?.label || "Non spécifié"
       }
 - Message: ${formData.message || "Aucun message supplémentaire"}
 
@@ -117,7 +123,7 @@ Merci de me recontacter pour discuter de ce projet.`
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Demande de Devis Gratuit</CardTitle>
+        <CardTitle>Demande de Devis</CardTitle>
         <CardDescription>
           Remplissez ce formulaire et nous vous recontacterons rapidement pour
           discuter de votre projet
@@ -174,7 +180,7 @@ Merci de me recontacter pour discuter de ce projet.`
                   <SelectValue placeholder="Choisir un service" />
                 </SelectTrigger>
                 <SelectContent>
-                  {services.map((service) => (
+                  {contactData.services.map((service) => (
                     <SelectItem key={service.value} value={service.value}>
                       {service.label}
                     </SelectItem>
@@ -203,7 +209,7 @@ Merci de me recontacter pour discuter de ce projet.`
                 <SelectValue placeholder="Sélectionner une fourchette" />
               </SelectTrigger>
               <SelectContent>
-                {budgetRanges.map((range) => (
+                {contactData.budgetRanges.map((range) => (
                   <SelectItem key={range.value} value={range.value}>
                     {range.label}
                   </SelectItem>

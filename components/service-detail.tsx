@@ -34,13 +34,6 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
     ""
   )}?text=${whatsappMessage}`;
 
-  const categoryLabels = {
-    finitions: "Finitions",
-    forage: "Forage",
-    infrastructure: "Infrastructure",
-    construction: "Construction",
-  };
-
   return (
     <div className="py-8">
       <div className="container mx-auto px-4">
@@ -63,7 +56,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                 <span className="text-4xl">{service.icon}</span>
                 <div>
                   <Badge variant="secondary" className="mb-2">
-                    {categoryLabels[service.category]}
+                    {vars.categoryLabels[service.category]}
                   </Badge>
                   <h1 className="text-3xl lg:text-4xl font-bold text-balance">
                     {service.title}
@@ -140,104 +133,6 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                 </CardContent>
               </Card>
             )}
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Service Info Card */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Informations du Service</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {service.price && (
-                  <div className="flex items-center gap-3">
-                    <DollarSign className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="text-sm text-muted-foreground">Prix</p>
-                      <p className="font-semibold">{service.price}</p>
-                    </div>
-                  </div>
-                )}
-                {service.duration && (
-                  <div className="flex items-center gap-3">
-                    <Clock className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="text-sm text-muted-foreground">
-                        Durée estimée
-                      </p>
-                      <p className="font-semibold">{service.duration}</p>
-                    </div>
-                  </div>
-                )}
-                {service.includes3DModeling && (
-                  <Badge variant="outline" className="w-fit">
-                    Modélisation 3D incluse
-                  </Badge>
-                )}
-              </CardContent>
-            </Card>
-
-            {/* Contact Card */}
-            <Card className="bg-primary/5 border-primary/20">
-              <CardHeader>
-                <CardTitle>Intéressé par ce Service ?</CardTitle>
-                <CardDescription>
-                  Contactez-nous pour un devis personnalisé et gratuit
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Button asChild className="w-full" size="lg">
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle className="mr-2 h-4 w-4" />
-                    Contacter sur WhatsApp
-                  </a>
-                </Button>
-
-                <Separator />
-
-                <div className="space-y-3 text-sm">
-                  {vars.phones.map((phone, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <Phone className="h-4 w-4 text-primary" />
-                      <span>{phone}</span>
-                    </div>
-                  ))}
-                  <div className="flex items-center gap-2">
-                    <Mail className="h-4 w-4 text-primary" />
-                    <span>{vars.email}</span>
-                  </div>
-                </div>
-
-                <Button
-                  variant="outline"
-                  asChild
-                  className="w-full bg-transparent"
-                >
-                  <Link href="/contact">Formulaire de Contact</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Other Services */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Autres Services</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Button
-                  variant="outline"
-                  asChild
-                  className="w-full bg-transparent"
-                >
-                  <Link href="/services">Voir Tous Nos Services</Link>
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

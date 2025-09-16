@@ -13,18 +13,7 @@
       "videos": [],
       "location": "Yaoundé, Cameroun",
       "completionDate": "2024-03-15",
-      "client": "Famille Mbarga",
-      "serviceUsed": "construction-maisons",
-      "specifications": {
-        "surface": "250 m²",
-        "materials": [
-          "Béton armé",
-          "Carrelage italien",
-          "Peinture acrylique"
-        ],
-        "duration": "5 mois",
-        "budget": "25,000,000 FCFA"
-      }
+      "serviceUsed": "construction-maisons"
     },
     {
       "id": "forage-ecole-douala",
@@ -37,17 +26,7 @@
       ],
       "location": "Douala, Cameroun",
       "completionDate": "2024-01-20",
-      "client": "École Primaire Saint-Joseph",
-      "serviceUsed": "forage-eau",
-      "specifications": {
-        "materials": [
-          "Pompe immergée",
-          "Tuyauterie PVC",
-          "Réservoir 5000L"
-        ],
-        "duration": "10 jours",
-        "budget": "800,000 FCFA"
-      }
+      "serviceUsed": "forage-eau"
     },
     {
       "id": "rigoles-quartier-bafoussam",
@@ -60,18 +39,7 @@
       ],
       "location": "Bafoussam, Cameroun",
       "completionDate": "2023-11-30",
-      "client": "Mairie de Bafoussam",
-      "serviceUsed": "rigoles-drainage",
-      "specifications": {
-        "surface": "2 km de rigoles",
-        "materials": [
-          "Béton armé",
-          "Grilles métalliques",
-          "Regards en béton"
-        ],
-        "duration": "3 semaines",
-        "budget": "12,000,000 FCFA"
-      }
+      "serviceUsed": "rigoles-drainage"
     },
     {
       "id": "finitions-bureau-yaounde",
@@ -84,18 +52,7 @@
       ],
       "location": "Yaoundé, Cameroun",
       "completionDate": "2024-02-10",
-      "client": "Entreprise TechCam",
-      "serviceUsed": "finitions-interieures",
-      "specifications": {
-        "surface": "150 m²",
-        "materials": [
-          "Peinture mate",
-          "Carrelage grès",
-          "Faux plafond"
-        ],
-        "duration": "3 semaines",
-        "budget": "4,500,000 FCFA"
-      }
+      "serviceUsed": "finitions-interieures"
     },
     {
       "id": "poteaux-eclairage-garoua",
@@ -108,17 +65,7 @@
       ],
       "location": "Garoua, Cameroun",
       "completionDate": "2023-12-15",
-      "client": "Commune de Garoua",
-      "serviceUsed": "poteaux-electriques",
-      "specifications": {
-        "materials": [
-          "Poteaux béton 8m",
-          "Luminaires LED",
-          "Câbles électriques"
-        ],
-        "duration": "2 semaines",
-        "budget": "6,000,000 FCFA"
-      }
+      "serviceUsed": "poteaux-electriques"
     }
   ]
 }

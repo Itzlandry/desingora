@@ -43,7 +43,7 @@ export function Navigation() {
           <div className="hidden md:flex items-center space-x-4">
             <ModeToggle />
             <Button asChild>
-              <Link href="/contact">Devis Gratuit</Link>
+              <Link href="/contact">Faire un devis</Link>
             </Button>
           </div>
 
@@ -80,7 +80,7 @@ export function Navigation() {
               ))}
               <Button asChild className="w-fit">
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
-                  Devis Gratuit
+                  Faire un devis
                 </Link>
               </Button>
             </div>

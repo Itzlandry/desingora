@@ -19,7 +19,7 @@ export function CTASection() {
                   Prêt à Démarrer Votre Projet ?
                 </h2>
                 <p className="text-xl text-muted-foreground text-pretty">
-                  Contactez-nous dès aujourd'hui pour un devis gratuit et une
+                  Contactez-nous dès aujourd'hui pour un devis et une
                   consultation personnalisée. Nous vous accompagnons de la
                   modélisation 3D à la livraison finale.
                 </p>
@@ -27,7 +27,7 @@ export function CTASection() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild>
                     <Link href="/contact">
-                      Devis Gratuit
+                      Faire un devis
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
