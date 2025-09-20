@@ -41,7 +41,6 @@ export function Navigation() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <ModeToggle />
             <Button asChild>
               <Link href="/contact">Faire un devis</Link>
             </Button>
@@ -49,7 +48,6 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
-            <ModeToggle />
             <Button
               variant="ghost"
               size="icon"

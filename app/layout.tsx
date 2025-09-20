@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Suspense } from "react";
 import "./globals.css";
 import * as vars from "@/lib/vars";
@@ -20,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="fr" className="dark" suppressHydrationWarning>
       <head>
         <meta
           name="description"
@@ -39,16 +38,7 @@ export default function RootLayout({
         <link rel="icon" href="/logo-2.png" type="image/png" />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <Suspense fallback={null}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </Suspense>
+        <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
     </html>
