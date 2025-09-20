@@ -14,7 +14,24 @@
       ],
       "icon": "🏠",
       "image": "/placeholder.svg?height=400&width=600",
-      "category": "finitions",
+      "category": "amenagement",
+      "includes3DModeling": true
+    },
+    {
+      "id": "amenagement-interieurs",
+      "title": "Aménagement Intérieurs",
+      "description": "Optimisation et transformation de vos espaces intérieurs",
+      "longDescription": "Nous proposons des solutions complètes d'aménagement intérieur pour valoriser et adapter vos espaces à vos besoins. De la conception à la réalisation, notre équipe vous accompagne avec des plans 3D pour visualiser chaque étape du projet.",
+      "features": [
+        "Conception d'espaces personnalisés",
+        "Optimisation de l'agencement",
+        "Création de cloisons et rangements",
+        "Choix des matériaux et finitions",
+        "Gestion de la lumière et de l'acoustique"
+      ],
+      "icon": "🛋️",
+      "image": "/amenagement_interieur/01.jpg",
+      "category": "amenagement",
       "includes3DModeling": true
     },
     {
@@ -31,7 +48,7 @@
       ],
       "icon": "🏢",
       "image": "/placeholder.svg?height=400&width=600",
-      "category": "finitions",
+      "category": "amenagement",
       "includes3DModeling": true
     },
     {
@@ -100,6 +117,23 @@
       "icon": "🏡",
       "image": "/placeholder.svg?height=400&width=600",
       "category": "construction",
+      "includes3DModeling": true
+    },
+    {
+      "id": "conceptions-3d",
+      "title": "Conceptions 3D",
+      "description": "Modélisation et visualisation 3D de projets",
+      "longDescription": "Service de conception 3D pour visualiser vos projets avant leur réalisation. Nous créons des maquettes numériques détaillées pour l’architecture, l’aménagement intérieur, l’infrastructure et plus encore. Idéal pour valider vos idées et faciliter la prise de décision.",
+      "features": [
+        "Modélisation 3D architecturale",
+        "Rendus photoréalistes",
+        "Animation de parcours virtuel",
+        "Personnalisation des matériaux et couleurs",
+        "Intégration de plans techniques"
+      ],
+      "icon": "🖥️",
+      "image": "/3d/exterieur_01.jpg",
+      "category": "3d",
       "includes3DModeling": true
     }
   ]

@@ -1,71 +1,59 @@
 {
   "examples": [
     {
-      "id": "villa-moderne-yaounde",
-      "title": "Villa Moderne à Yaoundé",
-      "description": "Construction complète d'une villa de 4 chambres avec finitions haut de gamme",
-      "category": "construction",
+      "id": "amenagement_interieur",
+      "title": "Aménagement Interieur",
+      "description": "Transformation et optimisation d’un intérieur de maison.",
+      "category": "amenagement",
       "images": [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600"
+        "/amenagement_interieur/01.jpg",
+        "/amenagement_interieur/02.jpg",
+        "/amenagement_interieur/03.jpg",
+        "/amenagement_interieur/04.jpg",
+        "/amenagement_interieur/05.jpg",
+        "/amenagement_interieur/06.jpg",
+        "/amenagement_interieur/07.jpg",
+        "/amenagement_interieur/08.jpg",
+        "/amenagement_interieur/09.jpg",
+        "/amenagement_interieur/10.jpg",
+        "/amenagement_interieur/11.jpg",
+        "/amenagement_interieur/12.jpg",
+        "/amenagement_interieur/13.jpg"
       ],
       "videos": [],
       "location": "Yaoundé, Cameroun",
       "completionDate": "2024-03-15",
-      "serviceUsed": "construction-maisons"
+      "serviceUsed": "amenagement-interieur"
     },
     {
-      "id": "forage-ecole-douala",
-      "title": "Forage École Primaire Douala",
-      "description": "Forage de puits d'eau potable pour une école de 500 élèves",
-      "category": "forage",
+      "id": "interieur_3d_01",
+      "title": "Interieur 3D 01",
+      "description": "Visualisation 3D d’un intérieur moderne avant travaux.",
+      "category": "3d",
       "images": [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600"
+        "/3d/interieur_01.jpg",
+        "/3d/interieur_02.jpg",
+        "/3d/interieur_03.jpg",
+        "/3d/interieur_04.jpg"
       ],
-      "location": "Douala, Cameroun",
+      "location": "Yaoundé, Cameroun",
       "completionDate": "2024-01-20",
-      "serviceUsed": "forage-eau"
+      "serviceUsed": "conceptions-3d"
     },
     {
-      "id": "rigoles-quartier-bafoussam",
-      "title": "Système de Drainage Bafoussam",
-      "description": "Construction de rigoles pour l'évacuation des eaux pluviales",
-      "category": "infrastructure",
+      "id": "exterieur_3d_01",
+      "title": "Extérieur 3D 01",
+      "description": "Modélisation 3D d’un extérieur résidentiel et paysager.",
+      "category": "3d",
       "images": [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600"
-      ],
-      "location": "Bafoussam, Cameroun",
-      "completionDate": "2023-11-30",
-      "serviceUsed": "rigoles-drainage"
-    },
-    {
-      "id": "finitions-bureau-yaounde",
-      "title": "Finitions Bureau Commercial",
-      "description": "Rénovation complète des finitions d'un bureau commercial",
-      "category": "finitions",
-      "images": [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600"
+        "/3d/exterieur_01.jpg",
+        "/3d/exterieur_02.jpg",
+        "/3d/exterieur_03.jpg",
+        "/3d/exterieur_04.jpg"
       ],
       "location": "Yaoundé, Cameroun",
       "completionDate": "2024-02-10",
-      "serviceUsed": "finitions-interieures"
-    },
-    {
-      "id": "poteaux-eclairage-garoua",
-      "title": "Éclairage Public Garoua",
-      "description": "Installation de 20 poteaux d'éclairage public",
-      "category": "infrastructure",
-      "images": [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600"
-      ],
-      "location": "Garoua, Cameroun",
-      "completionDate": "2023-12-15",
-      "serviceUsed": "poteaux-electriques"
+      "serviceUsed": "conceptions-3d"
     }
   ]
 }
