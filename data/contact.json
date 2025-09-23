@@ -1,34 +1,4 @@
 {
-    "services": [
-        {
-            "value": "construction",
-            "label": "Construction de maisons"
-        },
-        {
-            "value": "finitions-interieures",
-            "label": "Finitions intérieures"
-        },
-        {
-            "value": "finitions-exterieures",
-            "label": "Finitions extérieures"
-        },
-        {
-            "value": "forage",
-            "label": "Forage de puits"
-        },
-        {
-            "value": "rigoles",
-            "label": "Rigoles et drainage"
-        },
-        {
-            "value": "poteaux",
-            "label": "Poteaux électriques"
-        },
-        {
-            "value": "autre",
-            "label": "Autre service"
-        }
-    ],
     "budgetRanges": [
         {
             "value": "moins-1m",

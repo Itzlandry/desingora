@@ -1,12 +1,15 @@
+import { categoryLabels } from "./vars";
+
+export type Category = keyof typeof categoryLabels;
+
 export interface Service {
   id: string;
   title: string;
   description: string;
   longDescription: string;
-  features: string[];
   icon: string;
   image: string;
-  category: "finitions" | "forage" | "infrastructure" | "construction";
+  category: Category;
   includes3DModeling: boolean;
 }
 
@@ -14,7 +17,7 @@ export interface Example {
   id: string;
   title: string;
   description: string;
-  category: "finitions" | "forage" | "infrastructure" | "construction";
+  category: Category;
   images: string[];
   videos?: string[];
   location: string;

@@ -5,13 +5,6 @@
       "title": "Finitions Intérieures",
       "description": "Travaux de finition pour l'intérieur de vos bâtiments",
       "longDescription": "Nous réalisons tous vos travaux de finitions intérieures avec un savoir-faire artisanal et des matériaux de qualité. Chaque projet commence par une modélisation 3D détaillée pour vous permettre de visualiser le résultat final.",
-      "features": [
-        "Peinture et décoration",
-        "Pose de carrelage et revêtements",
-        "Plafonnage et enduits",
-        "Installation électrique et plomberie",
-        "Menuiserie intérieure"
-      ],
       "icon": "🏠",
       "image": "/placeholder.svg?height=400&width=600",
       "category": "amenagement",
@@ -22,13 +15,6 @@
       "title": "Aménagement Intérieurs",
       "description": "Optimisation et transformation de vos espaces intérieurs",
       "longDescription": "Nous proposons des solutions complètes d'aménagement intérieur pour valoriser et adapter vos espaces à vos besoins. De la conception à la réalisation, notre équipe vous accompagne avec des plans 3D pour visualiser chaque étape du projet.",
-      "features": [
-        "Conception d'espaces personnalisés",
-        "Optimisation de l'agencement",
-        "Création de cloisons et rangements",
-        "Choix des matériaux et finitions",
-        "Gestion de la lumière et de l'acoustique"
-      ],
       "icon": "🛋️",
       "image": "/amenagement_interieur/01.jpg",
       "category": "amenagement",
@@ -39,13 +25,6 @@
       "title": "Finitions Extérieures",
       "description": "Embellissement et protection de vos façades",
       "longDescription": "Nos équipes spécialisées s'occupent de toutes vos finitions extérieures pour protéger et embellir vos constructions. Modélisation 3D incluse pour tous nos projets.",
-      "features": [
-        "Crépi et enduits extérieurs",
-        "Peinture de façade",
-        "Pose de bardage",
-        "Étanchéité",
-        "Aménagement paysager"
-      ],
       "icon": "🏢",
       "image": "/placeholder.svg?height=400&width=600",
       "category": "amenagement",
@@ -56,13 +35,6 @@
       "title": "Forage de Puits",
       "description": "Forage de puits d'eau potable et industrielle",
       "longDescription": "Nous réalisons des forages de qualité pour l'approvisionnement en eau potable et industrielle. Chaque projet est précédé d'une étude géologique et d'une modélisation 3D du site.",
-      "features": [
-        "Étude géologique préalable",
-        "Forage jusqu'à 100m de profondeur",
-        "Installation de pompes",
-        "Analyse de la qualité de l'eau",
-        "Maintenance et entretien"
-      ],
       "icon": "💧",
       "image": "/placeholder.svg?height=400&width=600",
       "category": "forage",
@@ -73,13 +45,6 @@
       "title": "Rigoles et Drainage",
       "description": "Système de drainage et évacuation des eaux",
       "longDescription": "Construction de rigoles et systèmes de drainage pour l'évacuation efficace des eaux pluviales et usées. Modélisation 3D pour optimiser l'écoulement.",
-      "features": [
-        "Étude hydraulique",
-        "Construction de rigoles en béton",
-        "Pose de canalisations",
-        "Regards et bouches d'égout",
-        "Système de filtration"
-      ],
       "icon": "🌊",
       "image": "/placeholder.svg?height=400&width=600",
       "category": "infrastructure",
@@ -90,13 +55,6 @@
       "title": "Poteaux Électriques",
       "description": "Installation de poteaux pour réseaux électriques",
       "longDescription": "Installation professionnelle de poteaux électriques en béton armé pour l'éclairage public et la distribution électrique. Modélisation 3D du réseau incluse.",
-      "features": [
-        "Poteaux en béton armé",
-        "Fondations renforcées",
-        "Installation de luminaires",
-        "Câblage électrique",
-        "Mise aux normes"
-      ],
       "icon": "⚡",
       "image": "/placeholder.svg?height=400&width=600",
       "category": "infrastructure",
@@ -107,13 +65,6 @@
       "title": "Construction de Maisons",
       "description": "Construction complète de maisons individuelles",
       "longDescription": "Construction de maisons individuelles clé en main, du gros œuvre aux finitions. Chaque projet débute par une modélisation 3D complète pour visualiser votre future maison.",
-      "features": [
-        "Plans architecturaux",
-        "Gros œuvre complet",
-        "Charpente et toiture",
-        "Finitions intérieures et extérieures",
-        "Suivi de chantier"
-      ],
       "icon": "🏡",
       "image": "/placeholder.svg?height=400&width=600",
       "category": "construction",
@@ -124,13 +75,6 @@
       "title": "Conceptions 3D",
       "description": "Modélisation et visualisation 3D de projets",
       "longDescription": "Service de conception 3D pour visualiser vos projets avant leur réalisation. Nous créons des maquettes numériques détaillées pour l’architecture, l’aménagement intérieur, l’infrastructure et plus encore. Idéal pour valider vos idées et faciliter la prise de décision.",
-      "features": [
-        "Modélisation 3D architecturale",
-        "Rendus photoréalistes",
-        "Animation de parcours virtuel",
-        "Personnalisation des matériaux et couleurs",
-        "Intégration de plans techniques"
-      ],
       "icon": "🖥️",
       "image": "/3d/exterieur_01.jpg",
       "category": "3d",

@@ -85,19 +85,6 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
               </p>
             </div>
 
-            {/* Features */}
-            <div className="space-y-4">
-              <h2 className="text-2xl font-bold">Ce qui est Inclus</h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                {service.features.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* 3D Modeling Section */}
             {service.includes3DModeling && (
               <Card className="bg-primary/5 border-primary/20">

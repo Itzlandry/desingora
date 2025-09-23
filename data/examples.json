@@ -26,8 +26,8 @@
       "serviceUsed": "amenagement-interieur"
     },
     {
-      "id": "interieur_3d_01",
-      "title": "Interieur 3D 01",
+      "id": "interieur_3d",
+      "title": "Interieur 3D",
       "description": "Visualisation 3D d’un intérieur moderne avant travaux.",
       "category": "3d",
       "images": [
@@ -41,8 +41,8 @@
       "serviceUsed": "conceptions-3d"
     },
     {
-      "id": "exterieur_3d_01",
-      "title": "Extérieur 3D 01",
+      "id": "exterieur_3d",
+      "title": "Extérieur 3D",
       "description": "Modélisation 3D d’un extérieur résidentiel et paysager.",
       "category": "3d",
       "images": [

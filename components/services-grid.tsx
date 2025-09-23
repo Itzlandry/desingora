@@ -63,29 +63,6 @@ export function ServicesGrid() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {/* Features Preview */}
-                      <div className="space-y-2">
-                        <p className="text-sm font-medium">Inclus :</p>
-                        <ul className="text-sm text-muted-foreground space-y-1">
-                          {service.features
-                            .slice(0, 3)
-                            .map((feature, index) => (
-                              <li
-                                key={index}
-                                className="flex items-center gap-2"
-                              >
-                                <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                                {feature}
-                              </li>
-                            ))}
-                          {service.features.length > 3 && (
-                            <li className="text-primary text-xs">
-                              +{service.features.length - 3} autres...
-                            </li>
-                          )}
-                        </ul>
-                      </div>
-
                       {service.includes3DModeling && (
                         <Badge variant="outline" className="w-fit">
                           Modélisation 3D incluse

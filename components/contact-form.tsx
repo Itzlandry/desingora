@@ -24,6 +24,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { MessageCircle, Send, CheckCircle } from "lucide-react";
 import * as vars from "@/lib/vars";
+import servicesData from "@/data/services.json";
 import contactData from "@/data/contact.json";
 import { toast } from "sonner";
 
@@ -51,7 +52,9 @@ export function ContactForm() {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          service: formData.service,
+          service:
+            servicesData.services.find((s) => s.id === formData.service)
+              ?.title || formData.service,
           location: formData.location,
           budget: formData.budget,
           message: formData.message,
@@ -77,7 +80,7 @@ export function ContactForm() {
 Détails:
 - Nom: ${formData.name}
 - Service: ${
-        contactData.services.find((s) => s.value === formData.service)?.label ||
+        servicesData.services.find((s) => s.id === formData.service)?.title ||
         "Non spécifié"
       }
 - Localisation: ${formData.location || "Non spécifiée"}
@@ -180,9 +183,9 @@ Merci de me recontacter pour discuter de ce projet.`
                   <SelectValue placeholder="Choisir un service" />
                 </SelectTrigger>
                 <SelectContent>
-                  {contactData.services.map((service) => (
-                    <SelectItem key={service.value} value={service.value}>
-                      {service.label}
+                  {servicesData.services.map((service) => (
+                    <SelectItem key={service.id} value={service.id}>
+                      {service.title}
                     </SelectItem>
                   ))}
                 </SelectContent>
